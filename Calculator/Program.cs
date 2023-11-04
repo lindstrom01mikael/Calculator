@@ -32,8 +32,38 @@ namespace Calculator
 				// Show the menu of this program and wait for user make their chosie
 				int.TryParse(Menu(), out choise);
 
-				// Make a pause in this program
-				Console.ReadKey();
+				// Check if the user choise not to quit the program
+				if (choise != 99)
+				{
+					// Create a empty console window then show the name of this program
+					Console.Clear();
+                    Console.WriteLine(ProgramName);
+
+                    // Make a empty row
+                    Console.WriteLine();
+
+					// Take the user to the math function that user choise
+					switch(choise)
+					{
+						case 1:
+							Addition();
+							break;
+						case 2:
+							Subtraction(); 
+							break;
+						case 3:
+							Division(); 
+							break;
+						case 4:
+							Multiplication();
+							break;
+						default:
+							break;
+					}
+
+                    // Make a pause in this program
+                    Console.ReadKey();
+				}
 
 			} while (choise != 99);
 		}
